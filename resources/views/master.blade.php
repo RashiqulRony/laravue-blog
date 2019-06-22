@@ -56,5 +56,6 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
 <script src="{!! asset('frontend/') !!}/js/bootstrap-datepicker.js"></script>
 <script src="{!! asset('frontend/') !!}/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 </body>
 </html>

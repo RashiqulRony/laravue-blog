@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Category;
+use App\Contact;
 use Illuminate\Http\Request;
 
 class ApiController extends Controller
@@ -38,5 +39,19 @@ class ApiController extends Controller
     public function getCategories(){
         $categories = Category::get();
         return response()->json($categories);
+    }
+
+    public function contactStore(Request $request){
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        $contact->save();
+
+        return response()->json([
+            'success' => 'Thank you for contact, We will soon contact later',
+            'obj' => $contact,
+        ], 200);
     }
 }
